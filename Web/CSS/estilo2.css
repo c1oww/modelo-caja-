@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   box-sizing: border-box;
+   font-family: 'Open Sans';
+}
+
+body
+{
+    background-color:#7FB3D5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 330vh;
+}
+
+
+.content-all
+{
+    width: 210px;
+    margin: auto;
+    perspective: 800px;
+    position: relative;
+    margin-top: 60px;
+    height: 320px;
+}
+
+.content-carrousel
+{
+    width: 100%;
+    position: absolute;
+    animation: rotar 10s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.content-carrousel:hover
+{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+
+.content-carrousel figure
+{
+    width: 100%;
+    height:210px;s
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:hover
+{
+    box-shadow: 0px 0px 0px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
+.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
+.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
+.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
+.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
+.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
+
+
+.content-carrousel img
+{
+    width: 100%;
+    transition: all 300ms;
+}
+
+.content-carrousel img:hover
+{
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+
+
+@keyframes rotar
+{
+    from
+    {
+        transform: rotateY(0deg);
+    }
+    to
+    {
+        transform: rotateY(360deg);
+    }
+}
+
+
+.logo
+{
+    height: 80px;
+    width: 80px;
+    margin-right: auto;
+}
+
+li, a
+{
+    font-weight: 500;
+    font-size: 16px;
+    color: #D0D3D4;
+    text-decoration: none;
+}
+
+header 
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.nav_links
+{
+    list-style: none;
+}
+
+.nav_links li
+{
+    position: relative;
+    display: inline-block;
+}
+
+
+.nav_links  li  a
+{
+    display: block;
+    padding: 8px;
+    color: #ECF0F1;
+    background-color: #5499C7;
+    border: 2px solid #1F618D;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+
+
+.nav_links li a:hover
+{
+    color: #1F618D;
+    box-shadow: 0 0 20px #D4E6F1, 0 0 40px;
+    transition: all .3s ;
+}
+
+
+.submenu
+{
+    position: absolute;
+    width: 10%;
+    height: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    color:  #ECF0F1;
+    text-decoration: none;
+    list-style: none;
+    font-size: 30px;
+}
+
+.sunmenu li a
+{
+    display: block;
+    padding: 8px;
+}
+
+.nav_links li:hover .submenu
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*TARJETAS DE COMPRA*/
+
+.container
+{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.container .card
+{
+  background-color: #fff;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 30px;
+  text-align: center;
+  transition: all 0.25s;
+    color: black;
+}
+
+.container .card:hover
+{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(26, 82, 118);
+}
+
+.container .card img
+{
+  width: 340px;
+  height: 220px;
+}
+
+.container .card h4
+{
+  font-weight: 500;
+}
+.container .card p
+{
+ padding: 0 0.5rem;
+ font-size: 13px;
+ font-weight: 300;
+}
+
+.container .card h5
+{
+  font-weight: 500;
+  color:#154360;
+}
+.container .card input[type = "submit"]   /*Esto seria la caja de "Comprar"*/
+{
+  background-color: #F7F9F9 ;
+  margin: 5px auto;
+  text-align: center;
+  border: 2px solid #5499C7;
+  padding: 5px 10px;
+  width: 100px;
+  color: black;
+  cursor:pointer;
+}
+.container .card input[type = "submit"]:hover /*Esto cuando pasemos con el mouse por "Comprar"*/
+{
+  background: #5499C7;color: #154360;
+}
